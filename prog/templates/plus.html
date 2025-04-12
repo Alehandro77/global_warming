@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class="ek">
+        <header id="header">
+            <div class="logo">
+                <a href="/">Global Warming News</a>
+            </div>
+        </header>
+        <main class="article-page">
+            <form action="{{ url_for('form_create') }}" method="post" class="creat-form">
+                <div class="create">
+                    <h1>Добавте новость</h>
+                    <div class="form__inputs">
+                        <label for="title">
+                            <input class="form_input" type="text" name="title" id="title" placeholder="Напишите заголовок" required>
+                        </label>
+                        <label for="link">
+                            <input class="form_input" type="url" name="link" id="link" placeholder="Укажите ссылку на источник" required>
+                        </label>
+                    </div>
+                    <label for="text">
+                        <input class="form_text" type="text" name="text" id="text" placeholder="Напишите краткое содержаие статьи" required>
+                    </label>
+                    <button class="form__button">Создать статью</button>
+                </div>
+            </form>
+        </main>
+        <footer id="footer">
+            <p>&copy; 2025 Global Warming News Alex</p>
+        </footer>
+    </div>
+</body>
+</html>

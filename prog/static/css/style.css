@@ -1,0 +1,180 @@
+
+
+/* Общие стили */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-image: url(../img/img.jpg); /* Светло-голубой фон для всего сайта */
+    
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Или scroll, если хотите, чтобы фон прокручивался */
+    height: 100vh; /* Устанавливает высоту на 100% высоты окна */
+    color: #333; /* Темно-серый цвет текста */
+}
+
+/* Шапка */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff; /* Белый фон для шапки */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Небольшая тень для шапки */
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100; /* Шапка всегда сверху */
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0077cc; /* Ярко-синий цвет логотипа */
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    color: #0077cc;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Плавное изменение цвета при наведении */
+}
+
+nav a:hover {
+    color: #00aaff; /* Более светлый синий цвет при наведении */
+}
+
+/* Контент */
+#content {
+    max-width: 1000px; /* Максимальная ширина контента */
+    margin: 100px auto 20px; /* Отступ сверху, автоматическое центрирование, отступ снизу */
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Измените 300px на минимальную ширину карточки */
+    grid-gap: 20px; /* Расстояние между карточками */
+    padding: 20px; /* Отступы вокруг контейнера */
+}
+
+.news-card {
+    padding: 20px;
+    text-align: center;
+
+    word-wrap: break-word; /* Для длинных слов */
+    overflow-wrap: break-word; /* Альтернатива для старых браузеров */
+    background-color: #fff; /* Белый фон для карточки */
+    border: 1px solid #eee; /* Тонкая серая граница */
+    border-radius: 5px; /* Закругленные углы */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Небольшая тень */
+    margin-bottom: 20px; /* Отступ между карточками */
+    transition: transform 0.2s ease; /* Плавное масштабирование при наведении */
+}
+
+.news-card:hover {
+    transform: scale(1.02); /* Небольшое увеличение при наведении */
+}
+
+.news-card h2 {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #005580; /* Темно-синий цвет заголовка */
+}
+
+.news-card p {
+    text-align: justify;
+    font-size: 16px;
+    line-height:1.5;
+    color: #555; /* Серый цвет текста */
+}
+
+/* Подвал */
+#footer {
+    background-color: #e0f2f7; /* Светло-голубой фон для подвала */
+    padding: 20px;
+    text-align: center;
+    color: #777; /* Светло-серый цвет текста */
+}
+
+.ek {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Стили для основной части страницы */
+.article-page {
+    width: 65%;
+    margin: 0 auto;
+    padding: 20px;
+    flex: 1;
+  }
+  
+  /* Стили для формы */
+  .creat-form {
+    margin-top: 120px;
+  }
+  
+  /* Стили для элементов формы */
+  .form_input {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  .form_text {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    height: 150px;
+  }
+  
+  .form__button {
+    background-color: #2abac4; /* Зеленый цвет */
+    color: white; /* Белый текст */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    border-color: #030d0e;
+    cursor: pointer; /* Меняем курсор на руку при наведении */
+    font-size: 16px; /* Размер шрифта */
+    border-radius: 5px; /* Скругление углов */display: block; /* Превращаем кнопку в блочный элемент */
+    margin: 0 auto; /* Автоматические отступы слева и справа */
+    width: fit-content; /* Чтобы кнопка не растягивалась на всю ширину */
+  }
+  
+  .form__button:hover {
+    background-color: #155d62 /* Более темный зеленый при наведении */
+  }
+  
+
+/* Цвета */
+:root {
+  --primary-color: #0077cc;
+  --secondary-color: #00aaff;
+  --text-color: #333;
+  --light-bg: #f0f8ff;
+  --card-bg: #fff;
+  --footer-bg: #e0f2f7;
+}
+
+a {
+    text-decoration-line: none;
+}
+
+.q{
+    margin-right: 100px;
+}
