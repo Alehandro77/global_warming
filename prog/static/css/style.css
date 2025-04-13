@@ -178,3 +178,58 @@ a {
 .q{
     margin-right: 100px;
 }
+
+.qvis{
+    background-color: #2abac4; /* Зеленый цвет */
+    color: white; /* Белый текст */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    border-color: #030d0e;
+    cursor: pointer; /* Меняем курсор на руку при наведении */
+    font-size: 16px; /* Размер шрифта */
+    border-radius: 5px; /* Скругление углов */display: block; /* Превращаем кнопку в блочный элемент */
+    margin: 0 auto; /* Автоматические отступы слева и справа */
+    width: fit-content; /* Чтобы кнопка не растягивалась на всю ширину */
+    margin-bottom: 50px;
+}
+
+#test_content {
+    background-color: rgba(0, 85, 128, 0.5);
+    width: 65%;
+    max-width: 1000px; /* Максимальная ширина контента */
+    margin: 100px auto 0; /* Отступ сверху, автоматическое центрирование, отступ снизу */
+    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Измените 300px на минимальную ширину карточки */
+    grid-gap: 20px; /* Расстояние между карточками */
+    padding: 20px; /* Отступы вокруг контейнера */
+}
+
+select {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; /* Серая граница */
+    border-radius: 4px;
+    box-sizing: border-box; /* Важно для правильной ширины */
+    background-color: #f8f8ff; /* Светло-серый фон */
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.test{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: white; /* Темно-синий цвет заголовка */
+}
+
+.flashes p {
+    color: black;
+    background-color: greenyellow;
+    padding: 10px;
+    border: 1px solid green;
+    border-radius: 4px;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
