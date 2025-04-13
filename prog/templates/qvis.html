@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class="ek">
+        <header id="header">
+            <div class="logo">
+                <a href="/">Global Warming News</a>
+            </div>
+        </header>
+        <main id="test_content">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <ul class="flashes">
+                        {% for category, message in messages %}
+                            <p class="{{ category }}">{{ message }}</p>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+            <form method="post" id="qvisForm" action="{{ url_for('qvis') }}" data-qvis-url="{{ url_for('qvis') }}">
+                <label class="test" for="v1">Что является основной причиной текущего глобального потепления?</label><br>
+                <select id="v1" name="v1" required>
+                    <option value="" >Выберите ...</option>
+                    <option value="o1" >Естественные колебания климата Земли.</option>
+                    <option value="o2" >Активность вулканов.</option>
+                    <option value="o3" >Выбросы парниковых газов в результате деятельности человека.</option>
+                    <option value="o4" >Изменения в солнечной активности.</option>
+                </select>
+
+                <label class="test" for="v2">Какой из перечисленных газов считается основным парниковым газом, ответственным за глобальное потепление?</label><br>
+                <select id="v2" name="v2" required>
+                    <option value="" >Выберите ...</option>
+                    <option value="o1"  >Кислород (O2).</option>
+                    <option value="o2" >Азот (N2).</option>
+                    <option value="o3" >Углекислый газ (CO2).</option>
+                    <option value="o4" >Аргон (Ar).</option>
+                </select>
+
+                <label class="test" for="v3">Какое из перечисленных последствий НЕ связано с глобальным потеплением?</label><br>
+                <select id="v3" name="v3" required>
+                    <option value="" >Выберите ...</option>
+                    <option value="o1"  >Повышение уровня моря.</option>
+                    <option value="o2" >Увеличение частоты и интенсивности экстремальных погодных явлений.</option>
+                    <option value="o3" >Уменьшение площади арктического морского льда.</option>
+                    <option value="o4" >Увеличение озонового слоя.</option>
+                </select>
+
+                <label class="test" for="v4">Какая отрасль, как правило, вносит наибольший вклад в выбросы парниковых газов в глобальном масштабе?</label><br>
+                <select id="v4" name="v4" required>
+                    <option value="" >Выберите ...</option>
+                    <option value="o1"  >Сельское хозяйство.</option>
+                    <option value="o2" >Транспорт.</option>
+                    <option value="o3" >Производство энергии.</option>
+                    <option value="o4" >Строительство.</option>
+                </select>
+
+                <label class="test" for="v5">Что такое "петля обратной связи" в контексте глобального потепления?</label><br>
+                <select id="v5" name="v5" required>
+                    <option value="" >Выберите ...</option>
+                    <option value="o1">Процесс, который замедляет глобальное потепление.</option>
+                    <option value="o2" >Устройство для измерения температуры воздуха.</option>
+                    <option value="o3" >Процесс, в котором изменение климата вызывает другие изменения, усиливающие первоначальный эффект.</option>
+                    <option value="o4" >Система управления климатом в зданиях.</option>
+                </select>
+
+                <label class="test" for="v6">Какой международный договор направлен на сокращение выбросов парниковых газов?</label><br>
+                <select id="v6" name="v6" required>
+                    <option value="" >Выберите ...</option>
+                    <option value="o1">Монреальский протокол.</option>
+                    <option value="o2" >Киотский протокол.</option>
+                    <option value="o3" >Венская конвенция.</option>
+                    <option value="o4" >Базельская конвенция.</option>
+                </select>
+
+                <label class="test" for="v7">Что такое "углеродный след"?</label><br>
+                <select id="v7" name="v7" required>
+                    <option value="" >Выберите ...</option>
+                    <option value="o1"  >Отложения угля в земле.</option>
+                    <option value="o2" >Общее количество парниковых газов, выбрасываемых деятельностью человека, организации или продукта.</option>
+                    <option value="o3" >Метод хранения углерода в почве.</option>
+                    <option value="o4" >Технология улавливания углерода из атмосферы.</option>
+                </select>
+
+                <label class="test" for="v8">Какое из перечисленных действий может помочь в борьбе с глобальным потеплением на индивидуальном уровне?</label><br>
+                <select id="v8" name="v8" required>
+                    <option value="" >Выберите ...</option>
+                    <option value="o1"  >Увеличение использования личного транспорта.</option>
+                    <option value="o2"  >Потребление большего количества мяса.</option>
+                    <option value="o3" >Сокращение энергопотребления дома.</option>
+                    <option value="o4" >Использование одноразовой посуды.</option>
+                </select>
+
+                <label class="test" for="v9">Что такое "нулевые выбросы"?</label><br>
+                <select id="v9" name="v9" required>
+                    <option value="" >Выберите ...</option>
+                    <option value="o1"  >Полное прекращение всей промышленной деятельности.</option>
+                    <option value="o2"  >Состояние, при котором выбросы парниковых газов сведены к минимуму и компенсируются удалением CO2 из атмосферы.</option>
+                    <option value="o3" >Использование только возобновляемых источников энергии.</option>
+                    <option value="o4" >Отсутствие какого-либо воздействия на окружающую среду.</option>
+                </select>
+
+                <label class="test" for="v10">Какой регион мира, как правило, наиболее уязвим к последствиям глобального потепления?</label><br>
+                <select id="v10" name="v10" required>
+                    <option value="" >Выберите ...</option>
+                    <option value="o1"  >Северная Америка.</option>
+                    <option value="o2"  >Европа.</option>
+                    <option value="o3" >Арктика.</option>
+                    <option value="o4" >Австралия.</option>
+                </select>
+                <button  class="form__button" type="submit">Сохранить</button>
+            </form>
+            
+        </main>
+        <footer id="footer">
+            <p>&copy; 2025 Global Warming News Alex</p>
+        </footer>
+    </div>
+</body>
+</html>
