@@ -1,8 +1,9 @@
-from flask import Flask, render_template,request, redirect
+from flask import Flask, render_template,request, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
+app.config['SECRET_KEY'] = 'CFijugJGSDUgUDGvcUGDGDSugSDuvchLSDhvisv'  # Замените на что-то случайное!
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///news.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 #Создание db
@@ -28,6 +29,68 @@ def glav():
 def plus():
     return render_template('plus.html')
 
+@app.route('/qvis', methods=['GET','POST'])
+def qvis():
+    if request.method == 'POST':
+
+        ball = 0
+
+        v1 = request.form['v1']
+        v2 = request.form['v2']
+        v3 = request.form['v3']
+        v4 = request.form['v4']
+        v5 = request.form['v5']
+        v6 = request.form['v6']
+        v7 = request.form['v7']
+        v8 = request.form['v8']
+        v9 = request.form['v9']
+        v10 = request.form['v10']
+
+        if v1 == 'o3':
+            ball += 1
+
+        if v2 == 'o3':
+            ball += 1
+
+        if v3 == 'o4':
+            ball += 1
+
+        if v4 == 'o3':
+            ball += 1
+
+        if v5 == 'o3':
+            ball += 1
+
+        if v6 == 'o2':
+            ball += 1
+
+        if v7 == 'o2':
+            ball += 1
+
+        if v8 == 'o3':
+            ball += 1
+
+        if v9 == 'o2':
+            ball += 1
+
+        if v10 == 'o3':
+            ball += 1
+
+
+
+        if ball == 1:
+            ful_mes = "Вы ответили правильно на " + str(ball)+ ' вопрос'
+
+        elif ball >= 2 and ball <= 4:
+            ful_mes = "Вы ответили правильно на " + str(ball)+ ' вопроса'
+
+        elif ball >= 5 or ball == 0:
+            ful_mes = "Вы ответили правильно на " + str(ball)+ ' вопросов'
+
+        flash(ful_mes, 'info')
+        return render_template('qvis.html')
+    else:
+        return render_template('qvis.html') 
 
 @app.route('/form_create', methods=['GET','POST'])
 def form_create():
